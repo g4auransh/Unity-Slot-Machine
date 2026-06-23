@@ -7,6 +7,7 @@ public class SlotMachineController : MonoBehaviour
 {
     [Header("UI Elements")]
     public TMP_Text creditsText;
+    public TMP_Text messageText; // For "JACKPOT!" or "Try Again!"
     
     [Header("Lever Animation")]
     public Image leverImage; 
@@ -30,6 +31,7 @@ public class SlotMachineController : MonoBehaviour
     void Start()
     {
         UpdateUI();
+        if (messageText != null) messageText.text = "Place your bet!";
     }
 
     public void UpdateUI()
@@ -48,12 +50,14 @@ public class SlotMachineController : MonoBehaviour
             currentCredits -= betAmount;
             UpdateUI();
             
+            if (messageText != null) messageText.text = "Spinning...";
+            
             StartCoroutine(PullLeverRoutine());
             StartCoroutine(SpinReelsRoutine()); // Start the reels!
         }
         else
         {
-            Debug.Log("Not enough credits!");
+            if (messageText != null) messageText.text = "Not enough credits!";
         }
     }
 
@@ -105,7 +109,8 @@ public class SlotMachineController : MonoBehaviour
             yield return new WaitForSeconds(swapSpeed);
         }
 
-        // TODO: Win/Loss checking goes here!
+        // REELS HAVE STOPPED! Check if the player won:
+        CheckWin();
         
         isSpinning = false;
     }
@@ -122,5 +127,30 @@ public class SlotMachineController : MonoBehaviour
         // 3. Spawn a brand new random symbol at the Top
         int randomIndex = Random.Range(0, possibleSymbols.Length);
         reelSlots[0].sprite = possibleSymbols[randomIndex];
+    }
+
+    // --- PAYOUT LOGIC ---
+    void CheckWin()
+    {
+        // Grab the middle image (Index 1) from all three reels
+        Sprite slot1 = reel1[1].sprite;
+        Sprite slot2 = reel2[1].sprite;
+        Sprite slot3 = reel3[1].sprite;
+
+        // Do they all match?
+        if (slot1 == slot2 && slot2 == slot3)
+        {
+            // JACKPOT! Calculate winnings (10x their bet)
+            int winnings = currentBet * 10;
+            currentCredits += winnings;
+            
+            if (messageText != null) messageText.text = "JACKPOT! You won " + winnings + "G!";
+            UpdateUI(); // Update the credits display
+        }
+        else
+        {
+            // You lose!
+            if (messageText != null) messageText.text = "Try Again!";
+        }
     }
 }
