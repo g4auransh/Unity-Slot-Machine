@@ -162,17 +162,17 @@ public class SlotMachineController : MonoBehaviour
             {
                 audioPlayer.PlayOneShot(winSound);
             }
-
-            // --- FIRE PARTICLES ---
-            if (jackpotParticles != null)
-            {
-                jackpotParticles.Play();
-            }
+  
         }
         else
         {
             // Lose (No sound plays)
             if (messageText != null) messageText.text = "Try Again!";
         }
+    }
+    public void QuitGame()
+    {
+        Debug.Log("Game is exiting...");
+        Application.Quit();
     }
 }
