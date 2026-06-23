@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Collections; 
+using System.Collections;
 
 public class SlotMachineController : MonoBehaviour
 {
@@ -73,33 +73,54 @@ public class SlotMachineController : MonoBehaviour
     {
         isSpinning = true;
 
-        float spinDuration = 2.0f; // Spins for 2 seconds
         float elapsedTime = 0f;
-        float swapSpeed = 0.05f;   // How fast the images swap (lower is faster)
+        float swapSpeed = 0.02f;   // Super fast smooth spinning!
 
-        // Rapidly swap images to simulate spinning
-        while (elapsedTime < spinDuration)
+        // Spin all 3 reels for 1 second
+        while (elapsedTime < 1.0f)
         {
             RandomizeReel(reel1);
             RandomizeReel(reel2);
             RandomizeReel(reel3);
-
             elapsedTime += swapSpeed;
             yield return new WaitForSeconds(swapSpeed);
         }
 
-        // TODO: Later, we will add the code here to check if the player won!
+        // Reel 1 stops! Spin Reels 2 & 3 for another half second
+        elapsedTime = 0f;
+        while (elapsedTime < 0.5f)
+        {
+            RandomizeReel(reel2);
+            RandomizeReel(reel3);
+            elapsedTime += swapSpeed;
+            yield return new WaitForSeconds(swapSpeed);
+        }
+
+        // Reel 2 stops! Spin Reel 3 for the final half second
+        elapsedTime = 0f;
+        while (elapsedTime < 0.5f)
+        {
+            RandomizeReel(reel3);
+            elapsedTime += swapSpeed;
+            yield return new WaitForSeconds(swapSpeed);
+        }
+
+        // TODO: Win/Loss checking goes here!
         
         isSpinning = false;
     }
 
-    // Helper function that randomly picks new images for a single reel
+    // The Waterfall Effect: Shifts symbols down instead of just flashing them
     void RandomizeReel(Image[] reelSlots)
     {
-        for (int i = 0; i < reelSlots.Length; i++)
-        {
-            int randomIndex = Random.Range(0, possibleSymbols.Length);
-            reelSlots[i].sprite = possibleSymbols[randomIndex];
-        }
+        // 1. Move the Middle symbol down to the Bottom
+        reelSlots[2].sprite = reelSlots[1].sprite;
+        
+        // 2. Move the Top symbol down to the Middle
+        reelSlots[1].sprite = reelSlots[0].sprite;
+        
+        // 3. Spawn a brand new random symbol at the Top
+        int randomIndex = Random.Range(0, possibleSymbols.Length);
+        reelSlots[0].sprite = possibleSymbols[randomIndex];
     }
 }
