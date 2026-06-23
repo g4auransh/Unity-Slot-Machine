@@ -574,7 +574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 206810721}
   - component: {fileID: 206810722}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Reel2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1043,7 +1043,7 @@ GameObject:
   - component: {fileID: 469809050}
   - component: {fileID: 469809052}
   - component: {fileID: 469809051}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1225,7 +1225,7 @@ GameObject:
   - component: {fileID: 584613761}
   - component: {fileID: 584613763}
   - component: {fileID: 584613762}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1300,7 +1300,7 @@ GameObject:
   - component: {fileID: 600670585}
   - component: {fileID: 600670587}
   - component: {fileID: 600670586}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1374,7 +1374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 709636509}
   - component: {fileID: 709636510}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Reel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1440,7 +1440,7 @@ GameObject:
   - component: {fileID: 759255799}
   - component: {fileID: 759255801}
   - component: {fileID: 759255800}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1515,7 +1515,7 @@ GameObject:
   - component: {fileID: 824489613}
   - component: {fileID: 824489615}
   - component: {fileID: 824489614}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Machine_Backing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1857,7 +1857,7 @@ GameObject:
   - component: {fileID: 949851633}
   - component: {fileID: 949851635}
   - component: {fileID: 949851634}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1932,7 +1932,7 @@ GameObject:
   - component: {fileID: 998094910}
   - component: {fileID: 998094912}
   - component: {fileID: 998094911}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2545,7 +2545,7 @@ GameObject:
   - component: {fileID: 1401502418}
   - component: {fileID: 1401502420}
   - component: {fileID: 1401502419}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2830,7 +2830,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1702669091}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Machine_Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2870,7 +2870,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1712249249}
   - component: {fileID: 1712249250}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Reel3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2936,7 +2936,7 @@ GameObject:
   - component: {fileID: 1750871903}
   - component: {fileID: 1750871905}
   - component: {fileID: 1750871904}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Machine_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3250,7 +3250,7 @@ GameObject:
   - component: {fileID: 1902932235}
   - component: {fileID: 1902932237}
   - component: {fileID: 1902932236}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3325,7 +3325,7 @@ GameObject:
   - component: {fileID: 1954021451}
   - component: {fileID: 1954021453}
   - component: {fileID: 1954021452}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3400,7 +3400,7 @@ GameObject:
   - component: {fileID: 2052284317}
   - component: {fileID: 2052284319}
   - component: {fileID: 2052284318}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Lever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3474,7 +3474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2125075249}
   - component: {fileID: 2125075250}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Reel_Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
