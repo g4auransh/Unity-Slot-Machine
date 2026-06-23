@@ -26,10 +26,13 @@ public class SlotMachineController : MonoBehaviour
     [Header("Symbols")]
     public Sprite[] possibleSymbols; 
 
-    [Header("Audio")] // --- THE AUDIO SECTION ---
+    [Header("Audio")] 
     public AudioSource audioPlayer;
-    public AudioClip scrollingSound; // Loops while spinning
-    public AudioClip winSound;       // Plays on jackpot
+    public AudioClip scrollingSound; 
+    public AudioClip winSound;       
+
+    [Header("Visual Effects")] // --- NEW PARTICLES SECTION ---
+    public ParticleSystem jackpotParticles;
 
     private bool isSpinning = false; 
 
@@ -158,6 +161,12 @@ public class SlotMachineController : MonoBehaviour
             if (audioPlayer != null && winSound != null)
             {
                 audioPlayer.PlayOneShot(winSound);
+            }
+
+            // --- FIRE PARTICLES ---
+            if (jackpotParticles != null)
+            {
+                jackpotParticles.Play();
             }
         }
         else
